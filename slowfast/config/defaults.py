@@ -353,13 +353,13 @@ _C.VGGSOUND = CfgNode()
 
 _C.VGGSOUND.AUDIO_DATA_DIR = ""
 
-_C.VGGSOUND.ANNOTATIONS_DIR = ""
+_C.VGGSOUND.ANNOTATIONS_DIR = "/home/shai/repos/auditory-slow-fast"
 
-_C.VGGSOUND.TRAIN_LIST = "train.pkl"
+_C.VGGSOUND.TRAIN_LIST = "EPIC_100_train.pkl"
 
-_C.VGGSOUND.VAL_LIST = "test.pkl"
+_C.VGGSOUND.VAL_LIST = "EPIC_100_train.pkl"
 
-_C.VGGSOUND.TEST_LIST = "test.pkl"
+_C.VGGSOUND.TEST_LIST = "EPIC_100_train.pkl"
 
 
 # -----------------------------------------------------------------------------

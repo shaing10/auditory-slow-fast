@@ -50,7 +50,7 @@ def parse_args():
         "--cfg",
         dest="cfg_file",
         help="Path to the config file",
-        default="configs/Kinetics/SLOWFAST_4x16_R50.yaml",
+        default="../configs/VGG-Sound/SLOWFAST_R50.yaml",
         type=str,
     )
     parser.add_argument(
@@ -79,6 +79,8 @@ def load_config(args):
     # Load config from command line, overwrite config from opts.
     if args.opts is not None:
         cfg.merge_from_list(args.opts)
+
+    print(f'config: {cfg}', flush=True)
 
     # Inherit parameters from args.
     if hasattr(args, "num_shards") and hasattr(args, "shard_id"):

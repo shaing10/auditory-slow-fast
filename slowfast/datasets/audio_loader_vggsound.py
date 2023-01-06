@@ -36,7 +36,8 @@ def get_start_end_idx(audio_size, clip_size, clip_idx, num_clips):
 
 
 def pack_audio(cfg, audio_record, temporal_sample_index):
-    path_audio = os.path.join(cfg.VGGSOUND.AUDIO_DATA_DIR, audio_record['video'][:-4] + '.wav')
+    # print([k for k in audio_record.keys() if 'video' in k])
+    path_audio = os.path.join(cfg.VGGSOUND.AUDIO_DATA_DIR, audio_record['video_id'][:-4] + '.wav')
     import librosa
     samples, sr = librosa.core.load(path_audio, sr=None, mono=False)
     assert sr == cfg.AUDIO_DATA.SAMPLING_RATE, \

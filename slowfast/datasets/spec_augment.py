@@ -1,6 +1,11 @@
 import random
 import torch
-from sparse_image_warp import sparse_image_warp
+
+import sys
+import os
+sys.path.append(os.getcwd()+ '/../datasets/')
+
+from .sparse_image_warp import sparse_image_warp
 
 
 def time_warp(spec, W=5):
