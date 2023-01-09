@@ -331,15 +331,15 @@ _C.DATA_LOADER.ENABLE_MULTI_THREAD_DECODE = False
 # -----------------------------------------------------------------------------
 _C.EPICKITCHENS = CfgNode()
 
-_C.EPICKITCHENS.AUDIO_DATA_FILE = ""
+_C.EPICKITCHENS.AUDIO_DATA_FILE = "../data/EPIC-KITCHENS-100_audio.hdf5"
 
-_C.EPICKITCHENS.ANNOTATIONS_DIR = ""
+_C.EPICKITCHENS.ANNOTATIONS_DIR = "../data"
 
-_C.EPICKITCHENS.TRAIN_LIST = "EPIC_100_train.pkl"
+_C.EPICKITCHENS.TRAIN_LIST = "smaller_EPIC_100_train.pkl"
 
-_C.EPICKITCHENS.VAL_LIST = "EPIC_100_validation.pkl"
+_C.EPICKITCHENS.VAL_LIST = "smaller_EPIC_100_train.pkl"
 
-_C.EPICKITCHENS.TEST_LIST = "EPIC_100_validation.pkl"
+_C.EPICKITCHENS.TEST_LIST = "smaller_EPIC_100_train.pkl"
 
 _C.EPICKITCHENS.TRAIN_PLUS_VAL = False
 

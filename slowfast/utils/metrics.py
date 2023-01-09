@@ -57,8 +57,8 @@ def multitask_topks_correct(preds, labels, ks=(1,)):
     task_count = len(preds)
     batch_size = labels[0].size(0)
     all_correct = torch.zeros(max_k, batch_size).type(torch.ByteTensor)
-    if torch.cuda.is_available():
-        all_correct = all_correct.cuda()
+    # if torch.cuda.is_available():
+    #     all_correct = all_correct.cuda()
     for output, label in zip(preds, labels):
         _, max_k_idx = output.topk(max_k, dim=1, largest=True, sorted=True)
         # Flip batch_size, class_count as .view doesn't work on non-contiguous
@@ -106,4 +106,5 @@ def multitask_topk_accuracies(preds, labels, ks):
         ks (list): list of ks to calculate the top accuracies.
    """
     num_multitask_topks_correct = multitask_topks_correct(preds, labels, ks)
+    # num_multitask_topks_correct = multitask_topks_correct([p.detach().cpu() for p in preds], labels, ks)
     return [(x / preds[0].size(0)) * 100.0 for x in num_multitask_topks_correct]
